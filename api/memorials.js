@@ -1,5 +1,5 @@
 let memorials = [
-    { id: 1, name: 'أحمد حسن', arabicName: 'أحمد حسن', years: '1942-2024', image: '', relationship: 'Father', dua: 'الفاتحة' }
+    
 ]
 
 export default function handler(req, res) {

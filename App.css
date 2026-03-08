@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #faf9f6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 48px;
+  padding: 48px 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  border: 1px solid rgba(230, 180, 140, 0.2);
+}
+
+.image-section {
+  margin-bottom: 32px;
+}
+
+.image-frame {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 24px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px -8px rgba(180, 130, 80, 0.3);
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+.image-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name-section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: #2d3e2c;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #4a3729;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.dates {
+  color: #b28b6f;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.quran-section {
+  background: #f4efe9;
+  padding: 48px 32px;
+  border-radius: 32px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quran-section::before {
+  content: "﴿﴾";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-size: 12rem;
+  color: rgba(180, 140, 100, 0.1);
+  font-family: serif;
+  transform: rotate(-15deg);
+}
+
+.arabic {
+  font-size: 2.5rem;
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  color: #4a3729;
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.translation {
+  color: #6b5843;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 16px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reference {
+  color: #b28b6f;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.dua-section {
+  background: linear-gradient(135deg, #f9f3ec 0%, #fefcf9 100%);
+  padding: 32px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+  border: 1px solid #e8d9cc;
+}
+
+.dua-arabic {
+  font-size: 2rem;
+  font-family: 'Amiri', serif;
+  color: #2d3e2c;
+  margin-bottom: 16px;
+}
+
+.fatiha {
+  color: #b28b6f;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.fatiha::before,
+.fatiha::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background: #e8d9cc;
+}
+
+.fatiha::before {
+  left: -30px;
+}
+
+.fatiha::after {
+  right: -30px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 32px 20px;
+    border-radius: 32px;
+  }
+
+  .name {
+    font-size: 2.8rem;
+  }
+
+  .arabic {
+    font-size: 1.8rem;
+  }
+
+  .quran-section {
+    padding: 32px 20px;
+  }
+
+  .dua-arabic {
+    font-size: 1.5rem;
+  }
+}
+
+.admin-panel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  min-height: 100vh;
+  background: #faf9f6;
+}
+
+.admin-panel h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: #4a3729;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.admin-panel h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #4a3729;
+  margin: 48px 0 24px;
+  text-align: center;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #4a3729;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-bottom: 32px;
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.back-button:hover {
+  transform: translateX(-5px);
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+  background: white;
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8d9cc;
+}
+
+.admin-form input {
+  padding: 16px 20px;
+  border: 2px solid #e8d9cc;
+  border-radius: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: #fefcf9;
+}
+
+.admin-form input:focus {
+  outline: none;
+  border-color: #b28b6f;
+  box-shadow: 0 0 0 4px rgba(178, 139, 111, 0.1);
+}
+
+.admin-form button {
+  background: #2d3e2c;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+
+.admin-form button:hover {
+  background: #1a2b1a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(45, 62, 44, 0.3);
+}
+
+.admin-list {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #e8d9cc;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.05);
+}
+
+.admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e8d9cc;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+}
+
+.admin-item:hover {
+  background: #f4efe9;
+}
+
+.admin-item:last-child {
+  border-bottom: none;
+}
+
+.admin-item span {
+  font-size: 1.1rem;
+  color: #4a3729;
+  font-weight: 500;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .admin-panel {
+    padding: 20px 16px;
+  }
+
+  .admin-form {
+    padding: 24px;
+  }
+
+  .admin-item {
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .delete-btn {
+    width: 100%;
+  }
+}

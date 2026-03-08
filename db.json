@@ -1,0 +1,13 @@
+{
+    "memorials": [
+        {
+            "id": 1,
+            "name": "Ahmed Hassan",
+            "arabicName": "أحمد حسن",
+            "years": "1942-2024",
+            "image": "/images/ahmed.jpg",
+            "relationship": "Father",
+            "dua": "اللهم اغفر له وارحمه"
+        }
+    ]
+}

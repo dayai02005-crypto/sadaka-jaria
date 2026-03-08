@@ -1,4 +1,4 @@
-const API_URL = 'https://your-repo-name.vercel.app/api/memorials'
+const API_URL = 'https://sadaka-jaria.vercel.app/api/memorials'
 
 export const getMemorials = async () => {
     const res = await fetch(API_URL)

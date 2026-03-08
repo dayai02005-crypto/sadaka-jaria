@@ -1,5 +1,5 @@
 let memorials = [
-    
+    { id: 1, name: 'Anis Ghezal', arabicName: 'أنيس غزال', years: '2005-2026', image: '/images/anis.png', relationship: 'صديق عزيز', dua: 'اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس' }
 ]
 
 export default function handler(req, res) {

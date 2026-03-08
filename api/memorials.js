@@ -1,25 +1,28 @@
-import fs from 'fs'
-import path from 'path'
+let memorials = [
+    { id: 1, name: 'أحمد حسن', arabicName: 'أحمد حسن', years: '1942-2024', image: '', relationship: 'Father', dua: 'الفاتحة' }
+]
 
 export default function handler(req, res) {
-    const filePath = path.join(process.cwd(), 'db.json')
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'))
+    // Add CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+
+    if (req.method === 'OPTIONS') return res.status(200).end()
 
     if (req.method === 'GET') {
-        res.status(200).json(data.memorials)
+        return res.status(200).json(memorials)
     }
 
-    else if (req.method === 'POST') {
+    if (req.method === 'POST') {
         const newPerson = { id: Date.now(), ...req.body }
-        data.memorials.push(newPerson)
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
-        res.status(201).json(newPerson)
+        memorials.push(newPerson)
+        return res.status(201).json(newPerson)
     }
 
-    else if (req.method === 'DELETE') {
+    if (req.method === 'DELETE') {
         const id = parseInt(req.query.id)
-        data.memorials = data.memorials.filter(m => m.id !== id)
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
-        res.status(200).json({ message: 'Deleted' })
+        memorials = memorials.filter(m => m.id !== id)
+        return res.status(200).json({ success: true })
     }
 }
